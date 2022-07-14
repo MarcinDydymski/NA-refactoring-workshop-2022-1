@@ -5,6 +5,7 @@
 
 #include "EventT.hpp"
 #include "IPort.hpp"
+#include <iostream>
 
 namespace Snake
 {
@@ -186,6 +187,8 @@ void Controller::receive(std::unique_ptr<Event> e)
                     m_foodPosition = std::make_pair(requestedFood.x, requestedFood.y);
                 } catch (std::bad_cast&) {
                     throw UnexpectedEventException();
+                    //
+                    std::cout << "P";
                 }
             }
         }
